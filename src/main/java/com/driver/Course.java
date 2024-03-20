@@ -35,9 +35,16 @@ public class Course {
 
     public void enrollStudent() throws CourseAlreadyFullException {
        // your code goes here
+        if (enrolledStudents >= maxCapacity) {
+            throw new CourseAlreadyFullException("Course is already full!");
+        }
+        enrolledStudents++;
     }
 
     public void dropStudent() {
        // your code goes here
+        if (enrolledStudents > 0) {
+            enrolledStudents--;
+        }
     }
 }
